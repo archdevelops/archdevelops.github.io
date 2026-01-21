@@ -1,33 +1,189 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
+  <title>Developer Profile</title>
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Cinzel:wght@600;800&display=swap" rel="stylesheet">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Inter, sans-serif;
+      background: #05060d;
+      color: #eef0ff;
+      overflow: hidden;
+    }
 
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+    .bg {
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 90deg, #6a5cff, #00e0ff, #ff7ad9, #6a5cff);
+      animation: spin 28s linear infinite;
+      filter: blur(140px);
+      opacity: 0.35;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 75%);
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      width: min(92vw, 520px);
+      padding: 3.2rem;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 40px 140px rgba(0,0,0,0.7);
+      text-align: center;
+      animation: float 7s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 1.4rem;
+      background: linear-gradient(135deg, #6a5cff, #00e0ff);
+      display: grid;
+      place-items: center;
+      font-family: Cinzel, serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #070812;
+      box-shadow: 0 0 40px rgba(0,224,255,0.6);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Cinzel, serif;
+      font-size: clamp(2rem, 6vw, 2.6rem);
+      background: linear-gradient(90deg, #ffffff, #9fdcff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .role {
+      margin: 0.5rem 0 1.4rem;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      color: #cfd6ff;
+    }
+
+    .bio {
+      font-weight: 300;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #dfe3ff;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .skill {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-3px) scale(1.05);
+      background: rgba(255,255,255,0.18);
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .links a {
+      padding: 0.75rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #070812;
+      background: linear-gradient(135deg, #6a5cff, #00e0ff);
+      box-shadow: 0 12px 36px rgba(0,224,255,0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .links a.secondary {
+      background: transparent;
+      color: #cfd6ff;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+    }
+
+    .links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 48px rgba(0,224,255,0.7);
+    }
+  </style>
 </head>
 
 <body>
+<div class="bg"></div>
+<div class="grid"></div>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
-  <script src="js/app.js"></script>
-
+<div class="container">
+  <div class="card">
+    <div class="avatar">TP</div>
+    <h1>Tobi Potter</h1>
+    <div class="role">SOFTWARE ENGINEER · CREATIVE DEVELOPER</div>
+    <div class="bio">
+      I build immersive systems, high-performance code, and elegant digital experiences where technology meets magic.
+    </div>
+    <div class="skills">
+      <div class="skill">TypeScript</div>
+      <div class="skill">Next.js</div>
+      <div class="skill">Roblox Luau</div>
+      <div class="skill">Unreal Engine</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">Shaders</div>
+      <div class="skill">VR / XR</div>
+    </div>
+    <div class="links">
+      <a href="#">Portfolio</a>
+      <a class="secondary" href="#">GitHub</a>
+    </div>
+  </div>
+</div>
 </body>
-
 </html>
